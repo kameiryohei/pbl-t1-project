@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px; /* 縦横の余白を追加 */
+  background-color: #e15353;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container h1 {
+  margin-right: 20px;
+  margin-bottom: 10px; /* h1とボタンの間に縦の余白を追加 */
+  color: #000000;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px; /* ボタン間と下部に縦の余白を追加 */
+}
