@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "../../css/subject.css";
+import Link from "next/link";
 
 function Screen1() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,28 @@ function Screen1() {
     programs: [],
   });
   const [showModal, setShowModal] = useState(false);
+
+  // プログラムのチェックボックスが変更されたときの処理
+  const handleProgramChange = (event) => {
+    const checkboxValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    // すでに選択されているプログラムを取得
+    const selectedPrograms = [...formData.programs];
+
+    // チェックがついている場合は他のプログラムのチェックを外す
+    if (isChecked) {
+      const newPrograms = [checkboxValue];
+      setFormData({ ...formData, programs: newPrograms });
+    } else {
+      // チェックが外れた場合は対象のプログラムを除外
+      const newPrograms = selectedPrograms.filter(
+        (program) => program !== checkboxValue
+      );
+      setFormData({ ...formData, programs: newPrograms });
+    }
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,13 +45,46 @@ function Screen1() {
         .filter((checkbox) => checkbox.checked)
         .map((checkbox) => checkbox.value),
     };
-    setFormData(newFormData);
 
+    setFormData(newFormData);
     setShowModal(true);
   };
   const closeModal = () => {
     setShowModal(false);
   };
+  const getDestination = (course, program) => {
+    switch (course) {
+      case "総合":
+        switch (program) {
+          case "PC":
+            return "/subject/general_pc";
+          case "NS":
+            return "/subject/general_ns";
+          case "HM":
+            return "/subject/general_hm";
+          case "DE":
+            return "/subject/general_de";
+          default:
+            return "/";
+        }
+      case "先進プロジェクト":
+        switch (program) {
+          case "PC":
+            return "/subject/advanced_pc";
+          case "NS":
+            return "/subject/advanced_ns";
+          case "HM":
+            return "/subject/advanced_hm";
+          case "DE":
+            return "/subject/advanced_de";
+          default:
+            return "/";
+        }
+      default:
+        return "/";
+    }
+  };
+
   return (
     <div className="parent" style={{ marginTop: "100px" }}>
       <h1 class="title">学年/学期/コース/プロジェクトを選択</h1>
@@ -71,6 +127,8 @@ function Screen1() {
               id="checkbox_PC"
               name="program[]"
               value="PC"
+              onChange={handleProgramChange}
+              checked={formData.programs.includes("PC")}
             />
             <label htmlFor="checkbox_PC" className="checkbox_p">
               フィジカルコンピューティング(PC)
@@ -80,6 +138,8 @@ function Screen1() {
               id="checkbox_NS"
               name="program[]"
               value="NS"
+              onChange={handleProgramChange}
+              checked={formData.programs.includes("NS")}
             />
             <label htmlFor="checkbox_NS" className="checkbox_p">
               ネットワークシステム(NS)
@@ -89,6 +149,8 @@ function Screen1() {
               id="checkbox_HM"
               name="program[]"
               value="HM"
+              onChange={handleProgramChange}
+              checked={formData.programs.includes("HM")}
             />
             <label htmlFor="checkbox_HM" className="checkbox_p">
               ヒューマンメディア(HM)
@@ -98,18 +160,17 @@ function Screen1() {
               id="checkbox_DE"
               name="program[]"
               value="DE"
+              onChange={handleProgramChange}
+              checked={formData.programs.includes("DE")}
             />
             <label htmlFor="checkbox_DE" className="checkbox_p">
               データエンジニアリング(DE)
             </label>
           </div>
         </label>
-        <input
-          className="submitButton"
-          type="submit"
-          id="button"
-          value="送信"
-        />
+        <button className="submitButton" type="submit" id="button" value="送信">
+          送信
+        </button>
       </form>
       {showModal && (
         <div className="overlay">
@@ -123,12 +184,13 @@ function Screen1() {
               <p>学期: {formData.semester}</p>
               <p>コース: {formData.course}</p>
               <p>プログラム: {formData.programs.join(", ")}</p>
-              <input
-                className="confirmButton"
-                type="submit"
-                id="button"
-                value="確定"
-              />
+              <Link
+                href={getDestination(formData.course, formData.programs[0])}
+              >
+                <button className="confirmButton" type="submit" id="button">
+                  確定
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,3 +1,24 @@
 .homeimage {
   padding-top: 100px;
 }
+.homeimage h2 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 15px 0;
+}
+.homeimage p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 5px 0;
+}
+.container123 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}

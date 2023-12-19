@@ -20,26 +20,25 @@ export default function Home() {
     <>
       <ThemeProvider theme={theme}>
         <div className="homeimage">
-          <h2>名城大学履情報工学部修登録ガイド</h2>
-          <p>らくらく☆とうろく</p>
-          <div class="v1_19">
-            <div class="v1_14"></div>
-          </div>
-          <div class="container">
-            <div class="v1_40">
-              <Link href={"/subject"}>
-                <Button variant="contained" color="ochre">
-                  履修プラン提案
-                </Button>
-              </Link>
-            </div>
-            <div class="v1_40">
-              <Link href={"/review"}>
-                <Button variant="contained" color="ochre">
-                  授業レビュー
-                </Button>
-              </Link>
-            </div>
+          <h2>名城大学履情報工学部履修提案サイト</h2>
+          <p>
+            このWebサイトは名城大学情報工学部の履修に特化して作成されたWebサイトです。
+          </p>
+          <p>
+            あなたに合った履修プランを提案します。また、授業レビューを投稿、閲覧することができます。
+          </p>
+
+          <div class="container123">
+            <Link href={"/subject"}>
+              <Button variant="contained" color="ochre">
+                履修プラン提案
+              </Button>
+            </Link>
+            <Link href={"/review"}>
+              <Button variant="contained" color="ochre">
+                授業レビュー
+              </Button>
+            </Link>
           </div>
         </div>
       </ThemeProvider>

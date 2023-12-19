@@ -19,15 +19,10 @@ const Header = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="header-container">
-        <Link href={"/"}>
+        <Link href={"/"} style={{ textDecoration: "none" }}>
           <h1>履修プラン提案サイト</h1>
         </Link>
         <div className="button-container">
-          <Link href={"/"}>
-            <Button variant="contained" color="ochre">
-              ホーム
-            </Button>
-          </Link>
           <Link href={"/subject"}>
             <Button variant="contained" color="ochre">
               履修プラン

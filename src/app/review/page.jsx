@@ -64,7 +64,6 @@ const Subject = () => {
   };
 
   const deleteReview = (reviewId) => {
-    // モーダルを表示し、削除対象のIDをセット
     setReviewIdToDelete(reviewId);
     setIsModalOpen(true);
   };

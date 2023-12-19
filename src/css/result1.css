@@ -1,0 +1,13 @@
+.result-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  padding-top: 110px;
+  text-align: center;
+}
+.result-container h2 {
+  border-bottom: 3px solid #eb7272;
+  width: fit-content;
+  margin: 0 auto;
+}
