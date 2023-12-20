@@ -296,13 +296,13 @@ const App = () => {
             <CourseAccordion
               courseName="PBL概論"
               instructors="亀谷先生"
-              syllabusLink="https://gkmsyllabus.meijo-u.ac.jp/camweb/slbssbdr.do?value(risyunen)=2023&value(semekikn)=1&value(kougicd)=641131&value(crclumcd)=12205"
+              syllabusLink="https://gkmsyllabus.meijo-u.ac.jp/camweb/slbssbdr.do?value(risyunen)=2023&value(semekikn)=1&value(kougicd)=642821&value(crclumcd)=12205"
             />
 
             <CourseAccordion
               courseName="アプリケーション開発"
               instructors="複数名"
-              syllabusLink="https://gkmsyllabus.meijo-u.ac.jp/camweb/slbssbdr.do?value(risyunen)=2023&value(semekikn)=1&value(kougicd)=641131&value(crclumcd)=12205"
+              syllabusLink="https://gkmsyllabus.meijo-u.ac.jp/camweb/slbssbdr.do?value(risyunen)=2023&value(semekikn)=1&value(kougicd)=642819&value(crclumcd)=12205"
             />
           </div>
         </div>

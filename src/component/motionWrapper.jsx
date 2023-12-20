@@ -6,9 +6,7 @@ const Hoge = () => (
     initial={{ opacity: 0 }} // 初期状態
     animate={{ opacity: 1 }} // マウント時
     exit={{ opacity: 0 }} // アンマウント時
-  >
-    // ...
-  </motion.div>
+  ></motion.div>
 );
 
 export default Hoge;

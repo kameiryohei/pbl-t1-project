@@ -7,7 +7,7 @@ const page = () => {
     <div className="result-container">
       <h2>先進プロジェクトコース</h2>
       <br />
-      <h4>ヒューマンメディアエンジニアリングコース（あいうえお順）</h4>
+      <h4>ヒューマンメディアコース</h4>
       <App />
     </div>
   );
