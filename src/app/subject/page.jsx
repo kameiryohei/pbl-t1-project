@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "../../css/subject.css";
+import "../../css/Subject.css";
 import Link from "next/link";
 
 function Screen1() {
