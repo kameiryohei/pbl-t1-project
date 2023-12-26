@@ -18,10 +18,14 @@ const Subject = () => {
   const [error, setError] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [reviewIdToDelete, setReviewIdToDelete] = useState(null);
+  const [isComponentLoaded, setIsComponentLoaded] = useState(false); // New state variable
 
   useEffect(() => {
-    fetchReviews();
-  }, []);
+    if (!isComponentLoaded) {
+      fetchReviews();
+      setIsComponentLoaded(true);
+    }
+  }, [isComponentLoaded]);
 
   const fetchReviews = async () => {
     try {
