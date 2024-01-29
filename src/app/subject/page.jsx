@@ -12,20 +12,16 @@ function Screen1() {
   });
   const [showModal, setShowModal] = useState(false);
 
-  // プログラムのチェックボックスが変更されたときの処理
   const handleProgramChange = (event) => {
     const checkboxValue = event.target.value;
     const isChecked = event.target.checked;
 
-    // すでに選択されているプログラムを取得
     const selectedPrograms = [...formData.programs];
 
-    // チェックがついている場合は他のプログラムのチェックを外す
     if (isChecked) {
       const newPrograms = [checkboxValue];
       setFormData({ ...formData, programs: newPrograms });
     } else {
-      // チェックが外れた場合は対象のプログラムを除外
       const newPrograms = selectedPrograms.filter(
         (program) => program !== checkboxValue
       );

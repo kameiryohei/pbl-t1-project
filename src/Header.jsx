@@ -27,7 +27,7 @@ const Header = () => {
             <Button variant="contained" color="ochre">
               履修プラン
             </Button>
-          </Link>{" "}
+          </Link>
           <Link href={"/review"}>
             <Button variant="contained" color="ochre">
               レビュー機能
